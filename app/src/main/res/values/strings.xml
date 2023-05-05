@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Exercicio-5 AsyncTask</string>
+    <string name="contar">Contar</string>
+    <string name="num">10</string>
+    <string name="contando">Contando...</string>
+    <string name="finalizado">Finalizado!</string>
+</resources>
