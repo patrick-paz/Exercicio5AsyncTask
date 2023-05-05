@@ -13,14 +13,13 @@ public class ContarTask extends AsyncTask <Integer, Integer, Void>{
     Button btnContar;
     TextView txtContar;
     TextView txtStatus;
-    ProgressBar pgbProgresso;
 
 
-    public ContarTask(Button btnContar,TextView txtContar, TextView txtStatus, ProgressBar pgbProgresso) {
+    public ContarTask(Button btnContar,TextView txtContar, TextView txtStatus) {
         this.btnContar = btnContar;
         this.txtContar = txtContar;
         this.txtStatus = txtStatus;
-        this.pgbProgresso = pgbProgresso;
+
 
     }
 
@@ -29,7 +28,7 @@ public class ContarTask extends AsyncTask <Integer, Integer, Void>{
         btnContar.setEnabled(false);
         txtContar.setText(R.string.num);
         txtStatus.setText(R.string.contando);
-        pgbProgresso.setProgress(0);
+
     }
 
     @Override
@@ -44,12 +43,12 @@ public class ContarTask extends AsyncTask <Integer, Integer, Void>{
         int p = values[0];
         super.onProgressUpdate(values);
         txtContar.setText(p);
-        pgbProgresso.setProgress(p);
+
     }
 
     protected Void doInBackground(Integer... integers) {
-        int max = integers[0];
-        for (int i = 10; i <=max ; i--) {
+        int min = integers[0];
+        for (int i = 10; i >min ; i--) {
             SystemClock.sleep(1000);
             publishProgress(i);
         }

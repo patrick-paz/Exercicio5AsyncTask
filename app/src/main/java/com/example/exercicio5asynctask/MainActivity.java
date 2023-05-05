@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        ContarTask task = new ContarTask(btnContar, txtContar, txtStatus, pgbProgresso);
-        pgbProgresso.setMax(20);
-        task.execute(pgbProgresso.getMax());
+        ContarTask task = new ContarTask(btnContar, txtContar, txtStatus);
+
+        task.execute(0);
 
     }
 }
