@@ -26,8 +26,6 @@ public class ContarTask extends AsyncTask <Integer, Integer, Void>{
     @Override
     protected void onPreExecute() {
         btnContar.setEnabled(false);
-        txtContar.setText(R.string.num);
-        txtStatus.setText(R.string.contando);
 
     }
 
@@ -42,13 +40,14 @@ public class ContarTask extends AsyncTask <Integer, Integer, Void>{
     protected void onProgressUpdate(Integer... values) {
         int p = values[0];
         super.onProgressUpdate(values);
-        txtContar.setText(p);
+        txtStatus.setText(R.string.contando);
+        txtContar.setText(String.valueOf(p));
 
     }
 
     protected Void doInBackground(Integer... integers) {
         int min = integers[0];
-        for (int i = 10; i >min ; i--) {
+        for (int i = 10; i >=min ; i--) {
             SystemClock.sleep(1000);
             publishProgress(i);
         }

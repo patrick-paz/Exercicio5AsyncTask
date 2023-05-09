@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnContar;
     private TextView txtStatus;
     private TextView txtContar;
-    private ProgressBar pgbProgresso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnContar = findViewById(R.id.btnContar);
         txtStatus = findViewById(R.id.txtStatus);
         txtContar = findViewById(R.id.txtContar);
-        pgbProgresso = findViewById(R.id.pgbProgresso);
 
         btnContar.setOnClickListener(this);
     }
@@ -32,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         ContarTask task = new ContarTask(btnContar, txtContar, txtStatus);
-
-        task.execute(0);
+        int min = 0;
+        task.execute(min);
 
     }
 }
